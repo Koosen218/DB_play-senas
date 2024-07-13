@@ -10,6 +10,7 @@ CREATE OR REPLACE PROCEDURE crear_usuario(
 )
 DECLARE
   INSERT INTO Tipo_Usuario (id_tipo, nombre, apellido, email, contra, _foto_perfil, tipo) VALUES (_tipo, _nombre, _apellido, _email, _contra, _foto_perfil, _tipo);
+--falta el progreso
 
 
 BEGIN
