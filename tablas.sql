@@ -48,8 +48,7 @@ SHOW TABLES;
 DROP TABLE IF EXISTS Preguntas;
 CREATE TABLE IF NOT EXISTS Preguntas (
     id_pregunta INT AUTO_INCREMENT,
-    nombre VARCHAR(50) NOT NULL,
-    descripcion VARCHAR(500) NOT NULL,
+    pregunta VARCHAR(100) NOT NULL,
     imagen_url VARCHAR(500) NOT NULL,
     nivel INT NOT NULL,
     tipo INT NOT NULL,
@@ -62,8 +61,9 @@ SHOW TABLES;
 DROP TABLE IF EXISTS Respuestas;
 CREATE TABLE IF NOT EXISTS Respuestas (
     id_respuesta INT AUTO_INCREMENT,
-    nombre VARCHAR(50) NOT NULL,
+    respuesta VARCHAR(50) NOT NULL,
     imagenURL VARCHAR(255) NOT NULL,
+    correcta BOOLEAN NOT NULL,
     tipo BOOLEAN NOT NULL,
     pregunta INT NOT NULL,
     CONSTRAINT Respuestas_Pregunta_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta),
@@ -73,6 +73,7 @@ SHOW TABLES;
 DROP TABLE IF EXISTS Orden_Respuestas;
 CREATE TABLE IF NOT EXISTS Orden_Respuestas (
   id_orden INT AUTO_INCREMENT,
+  respuesta VARCHAR(50) NOT NULL,
   pregunta INT NOT NULL,
   imagenURL VARCHAR(255) NOT NULL,
   orden INT NOT NULL,
@@ -96,7 +97,7 @@ CREATE TABLE IF NOT EXISTS Usuarios (
   id_usuario INT NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(50) NOT NULL,
   apellido VARCHAR(50) NOT NULL,
-  email VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL UNIQUE,
   contra VARCHAR(50) NOT NULL, -- password
   foto_perfil VARCHAR(400) NOT NULL,
   tipo INT NOT NULL,
