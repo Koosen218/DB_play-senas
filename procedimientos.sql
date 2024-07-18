@@ -16,3 +16,12 @@ DECLARE
 BEGIN
 END//
 DELIMITER;
+
+DELIMITER//
+CREATE OR REPLACE PROCEDURE eliminar_usuario(
+  IN p_id_usuario INT
+)
+BEGIN
+DELETE FROM Usuarios WHERE id_usuario = p_id_usuario;
+END//
+DELIMITER;

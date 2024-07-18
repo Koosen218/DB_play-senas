@@ -75,12 +75,13 @@ INSERT INTO Orden_Respuestas (id_orden, respuesta, pregunta, imagenURL, orden) V
 (4, 'Marte', 2, 'img2_4.jpg', 4);
 
 
-
+//consuta para traer las preguntas y respuestas de un nivel especifico
 SELECT
     p.id_pregunta,
     p.pregunta AS Pregunta,
     p.tipo AS TipoPregunta,
     p.imagen_url AS ImagenPregunta,
+    r.id_respuesta AS IdRespuesta,
     CASE
         WHEN tp.tipo = 'Escoge la respuesta correcta' THEN
             MAX(CASE WHEN r.correcta = TRUE THEN r.respuesta ELSE NULL END)
@@ -120,5 +121,32 @@ WHERE
     p.nivel = 1
 GROUP BY
     p.id_pregunta, p.pregunta, p.tipo, p.imagen_url;
+
+
+
+SELECT
+    p.id_pregunta,
+    p.pregunta AS Pregunta,
+    p.tipo AS TipoPregunta,
+    p.imagen_url AS ImagenPregunta,
+    r.id_respuesta AS IdRespuesta,
+    r.respuesta AS Respuesta,
+    r.imagenURL AS ImagenRespuesta,
+    r.correcta AS Correcta,
+    o.respuesta AS RespuestaOrdenada,
+    o.orden AS Orden
+FROM
+    Preguntas p
+    JOIN Tipo_Preguntas tp ON p.tipo = tp.id_tipo
+    LEFT JOIN Respuestas r ON p.id_pregunta = r.pregunta AND tp.tipo IN ('Escoge la respuesta correcta', 'Cierto y Falso')
+    LEFT JOIN Orden_Respuestas o ON p.id_pregunta = o.pregunta AND tp.tipo = 'Ordena la respuesta'
+WHERE
+    p.nivel = 1;
+
+
+
+
+
+SELECT * FROM Etapas WHERE id_etapa = idEtapa;
 
 
