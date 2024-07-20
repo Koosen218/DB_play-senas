@@ -1,4 +1,8 @@
 mariadb -u root -p
+mysql -h mariadb-17648-0.cloudclusters.net -P 17664 -u <username> -p
+
+mysql -h mariadb-17648-0.cloudclusters.net -P 17664 -u hampao -p --ssl-verify-server-cert=OFF
+
 show DATABASES;
 
 CREATE OR REPlACE DATABASE `juegos_senas`;
@@ -101,7 +105,7 @@ CREATE TABLE IF NOT EXISTS Usuarios (
   contra VARCHAR(50) NOT NULL, -- password
   foto_perfil VARCHAR(400) NOT NULL,
   tipo INT NOT NULL,
-  exp INT NOT NULL,
+  exp INT NOT NULL DEFAULT 0,
   CONSTRAINT `PK_Usuarios_id` PRIMARY KEY (id_usuario),
   CONSTRAINT Usuarios_TipoUsuarioId_FK FOREIGN KEY (tipo) REFERENCES Tipo_Usuario(id_tipo)
 );

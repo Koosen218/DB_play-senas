@@ -2,7 +2,7 @@
 
 
 --llenar la tabla de tipos de usuario
-DELIMITER //
+DELIMITER $$
 
 CREATE PROCEDURE Insert_Tipo_Usuario()
 BEGIN
@@ -18,7 +18,7 @@ BEGIN
     SET v_id_tipo = 2;
     SET v_tipo = 'Administrador';
     INSERT INTO Tipo_Usuario (id_tipo, tipo) VALUES (v_id_tipo, v_tipo);
-END //
+END $$
 
 DELIMITER ;
 
@@ -39,40 +39,40 @@ SELECT * FROM Tipo_Usuario;
 
 
 
---prueba de consulta de 
+-- --prueba de consulta de 
 
-INSERT INTO Etapas (id_etapa, nombre, descripcion) VALUES
-(1, 'Primera Etapa', 'Descripción de la primera etapa');
+-- INSERT INTO Etapas (id_etapa, nombre, descripcion) VALUES
+-- (1, 'Primera Etapa', 'Descripción de la primera etapa');
 
-INSERT INTO Niveles (id_nivel, nombre, descripcion, etapa, exp) VALUES
-(1, 'Nivel 1', 'Descripción del nivel 1', 1, 100);
-
-
-INSERT INTO Tipo_Preguntas (id_tipo, tipo) VALUES
-(1, 'Escoge la respuesta correcta'),
-(2, 'Ordena la respuesta'),
-(3, 'Cierto y Falso');
-
-INSERT INTO Preguntas (id_pregunta, pregunta, imagen_url, nivel, tipo) VALUES
-(1, '¿Cuál es la capital de Francia?', 'img1.jpg', 1, 1),
-(2, 'Ordena los planetas.', 'img2.jpg', 1, 2),
-(3, 'La Tierra es plana.', 'img3.jpg', 1, 3);
+-- INSERT INTO Niveles (id_nivel, nombre, descripcion, etapa, exp) VALUES
+-- (1, 'Nivel 1', 'Descripción del nivel 1', 1, 100);
 
 
-INSERT INTO Respuestas (id_respuesta, respuesta, imagenURL, correcta, tipo, pregunta) VALUES
-(1, 'París', 'img1_1.jpg', TRUE, FALSE, 1),
-(2, 'Londres', 'img1_2.jpg', FALSE, FALSE, 1),
-(3, 'Madrid', 'img1_3.jpg', FALSE, FALSE, 1),
-(4, 'Berlín', 'img1_4.jpg', FALSE, FALSE, 1),
-(5, 'Verdadero', 'img3_1.jpg', FALSE, TRUE, 3),
-(6, 'Falso', 'img3_2.jpg', TRUE, TRUE, 3);
+-- INSERT INTO Tipo_Preguntas (id_tipo, tipo) VALUES
+-- (1, 'Escoge la respuesta correcta'),
+-- (2, 'Ordena la respuesta'),
+-- (3, 'Cierto y Falso');
+
+-- INSERT INTO Preguntas (id_pregunta, pregunta, imagen_url, nivel, tipo) VALUES
+-- (1, '¿Cuál es la capital de Francia?', 'img1.jpg', 1, 1),
+-- (2, 'Ordena los planetas.', 'img2.jpg', 1, 2),
+-- (3, 'La Tierra es plana.', 'img3.jpg', 1, 3);
 
 
-INSERT INTO Orden_Respuestas (id_orden, respuesta, pregunta, imagenURL, orden) VALUES
-(1, 'Mercurio', 2, 'img2_1.jpg', 1),
-(2, 'Venus', 2, 'img2_2.jpg', 2),
-(3, 'Tierra', 2, 'img2_3.jpg', 3),
-(4, 'Marte', 2, 'img2_4.jpg', 4);
+-- INSERT INTO Respuestas (id_respuesta, respuesta, imagenURL, correcta, tipo, pregunta) VALUES
+-- (1, 'París', 'img1_1.jpg', TRUE, FALSE, 1),
+-- (2, 'Londres', 'img1_2.jpg', FALSE, FALSE, 1),
+-- (3, 'Madrid', 'img1_3.jpg', FALSE, FALSE, 1),
+-- (4, 'Berlín', 'img1_4.jpg', FALSE, FALSE, 1),
+-- (5, 'Verdadero', 'img3_1.jpg', FALSE, TRUE, 3),
+-- (6, 'Falso', 'img3_2.jpg', TRUE, TRUE, 3);
+
+
+-- INSERT INTO Orden_Respuestas (id_orden, respuesta, pregunta, imagenURL, orden) VALUES
+-- (1, 'Mercurio', 2, 'img2_1.jpg', 1),
+-- (2, 'Venus', 2, 'img2_2.jpg', 2),
+-- (3, 'Tierra', 2, 'img2_3.jpg', 3),
+-- (4, 'Marte', 2, 'img2_4.jpg', 4);
 
 
 //consuta para traer las preguntas y respuestas de un nivel especifico
