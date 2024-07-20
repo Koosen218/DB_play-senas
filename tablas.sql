@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS Niveles (
     etapa INT NOT NULL,
     exp INT NOT NULL,
     CONSTRAINT Niveles_IdNivel_PK PRIMARY KEY (id_nivel),
-    CONSTRAINT Niveles_EtapasId_FK FOREIGN KEY (etapa) REFERENCES Etapas(id_etapa)
+    CONSTRAINT Niveles_EtapasId_FK FOREIGN KEY (etapa) REFERENCES Etapas(id_etapa) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 SHOW TABLES;
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS Lecciones (
     imagen_url VARCHAR(500) NOT NULL,
     video_url VARCHAR(500) NOT NULL,
     nivel INT NOT NULL,
-    CONSTRAINT Lecciones_Nivel_FK FOREIGN KEY (nivel) REFERENCES Niveles(id_nivel),
+    CONSTRAINT Lecciones_Nivel_FK FOREIGN KEY (nivel) REFERENCES Niveles(id_nivel) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Lecciones_IdLeccion_PK PRIMARY KEY (id_leccion)
 );
 
@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS Preguntas (
     imagen_url VARCHAR(500) NOT NULL,
     nivel INT NOT NULL,
     tipo INT NOT NULL,
-    CONSTRAINT Preguntas_Tipo_FK FOREIGN KEY (tipo) REFERENCES Tipo_Preguntas(id_tipo),
-    CONSTRAINT Preguntas_nivel_FK FOREIGN KEY (nivel) REFERENCES Niveles(id_nivel),
+    CONSTRAINT Preguntas_Tipo_FK FOREIGN KEY (tipo) REFERENCES Tipo_Preguntas(id_tipo) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT Preguntas_nivel_FK FOREIGN KEY (nivel) REFERENCES Niveles(id_nivel) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Preguntas_IdPregunta_PK PRIMARY KEY (id_pregunta)
 );
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS Respuestas (
     correcta BOOLEAN NOT NULL,
     tipo BOOLEAN NOT NULL,
     pregunta INT NOT NULL,
-    CONSTRAINT Respuestas_Pregunta_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta),
+    CONSTRAINT Respuestas_Pregunta_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta) ON DECLARE ON UPDATE CASCADE,
     CONSTRAINT Opciones_IdRespuesta_PK PRIMARY KEY (id_respuesta)
 );
 SHOW TABLES;
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS Orden_Respuestas (
   imagenURL VARCHAR(255) NOT NULL,
   orden INT NOT NULL,
   CONSTRAINT Orden_Respuestas_IdOrden_PK PRIMARY KEY (id_orden),
-  CONSTRAINT Orden_Respuestas_PreguntasId_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta)
+  CONSTRAINT Orden_Respuestas_PreguntasId_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS Usuarios (
   tipo INT NOT NULL,
   exp INT NOT NULL DEFAULT 0,
   CONSTRAINT `PK_Usuarios_id` PRIMARY KEY (id_usuario),
-  CONSTRAINT Usuarios_TipoUsuarioId_FK FOREIGN KEY (tipo) REFERENCES Tipo_Usuario(id_tipo)
+  CONSTRAINT Usuarios_TipoUsuarioId_FK FOREIGN KEY (tipo) REFERENCES Tipo_Usuario(id_tipo) ON DELETE CASCADE ON UPDATE CASCADE
 );
 SHOW TABLES;
 
