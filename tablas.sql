@@ -1,4 +1,8 @@
 mariadb -u root -p
+
+
+
+
 mysql -h mariadb-17648-0.cloudclusters.net -P 17664 -u <username> -p
 
 mysql -h mariadb-17648-0.cloudclusters.net -P 17664 -u hampao -p --ssl-verify-server-cert=OFF
@@ -42,12 +46,12 @@ CREATE TABLE IF NOT EXISTS Lecciones (
 );
 
 
-SHOW TABLES;
-DROP TABLE IF EXISTS Tipo_Preguntas;
-CREATE TABLE IF NOT EXISTS Tipo_Preguntas (
-  id_tipo INT PRIMARY KEY AUTO_INCREMENT,
-  tipo VARCHAR(50) NOT NULL
-);
+-- SHOW TABLES;
+-- DROP TABLE IF EXISTS Tipo_Preguntas;
+-- CREATE TABLE IF NOT EXISTS Tipo_Preguntas (
+--   id_tipo INT PRIMARY KEY AUTO_INCREMENT,
+--   tipo VARCHAR(50) NOT NULL
+-- );
 SHOW TABLES;
 DROP TABLE IF EXISTS Preguntas;
 CREATE TABLE IF NOT EXISTS Preguntas (
@@ -56,7 +60,7 @@ CREATE TABLE IF NOT EXISTS Preguntas (
     imagen_url VARCHAR(500) NOT NULL,
     nivel INT NOT NULL,
     tipo INT NOT NULL,
-    CONSTRAINT Preguntas_Tipo_FK FOREIGN KEY (tipo) REFERENCES Tipo_Preguntas(id_tipo) ON DELETE CASCADE ON UPDATE CASCADE,
+    --CONSTRAINT Preguntas_Tipo_FK FOREIGN KEY (tipo) REFERENCES Tipo_Preguntas(id_tipo) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Preguntas_nivel_FK FOREIGN KEY (nivel) REFERENCES Niveles(id_nivel) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Preguntas_IdPregunta_PK PRIMARY KEY (id_pregunta)
 );
@@ -88,12 +92,12 @@ CREATE TABLE IF NOT EXISTS Orden_Respuestas (
 
 SHOW TABLES;
 
-DROP TABLE IF EXISTS Tipo_Usuario;
-CREATE TABLE IF NOT EXISTS Tipo_Usuario (
-    id_tipo INT,
-    tipo VARCHAR(50) NOT NULL,
-    CONSTRAINT Tipo_Usuario_IdTipo_PK PRIMARY KEY (id_tipo)
-);
+-- DROP TABLE IF EXISTS Tipo_Usuario;
+-- CREATE TABLE IF NOT EXISTS Tipo_Usuario (
+--     id_tipo INT,
+--     tipo VARCHAR(50) NOT NULL,
+--     CONSTRAINT Tipo_Usuario_IdTipo_PK PRIMARY KEY (id_tipo)
+-- );
 
 SHOW TABLES;
 DROP TABLE IF NOT EXISTS Usuarios;
@@ -106,8 +110,8 @@ CREATE TABLE IF NOT EXISTS Usuarios (
   foto_perfil VARCHAR(400) NOT NULL,
   tipo INT NOT NULL,
   exp INT NOT NULL DEFAULT 0,
-  CONSTRAINT `PK_Usuarios_id` PRIMARY KEY (id_usuario),
-  CONSTRAINT Usuarios_TipoUsuarioId_FK FOREIGN KEY (tipo) REFERENCES Tipo_Usuario(id_tipo) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `PK_Usuarios_id` PRIMARY KEY (id_usuario)
+  --CONSTRAINT Usuarios_TipoUsuarioId_FK FOREIGN KEY (tipo) REFERENCES Tipo_Usuario(id_tipo) ON DELETE CASCADE ON UPDATE CASCADE
 );
 SHOW TABLES;
 

@@ -29,6 +29,11 @@ END //
 
 DELIMITER ;
 
+
+
+
+
+
 -- Tabla Niveles:
 
 DELIMETER //
@@ -59,6 +64,12 @@ BEGIN
 END //
 
 DELIMITER ;
+
+
+
+
+
+
 
 -- Tabla Lecciones:
 

@@ -143,6 +143,8 @@ FROM
 WHERE
     p.nivel = 1;
 
+INSERT INTO Usuarios (nombre, apellido, email, contra, foto_perfil, tipo)
+VALUES ('Ana', 'Lopez', 'A.Lopez@email.com', '789', 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 1);
 
 
 
