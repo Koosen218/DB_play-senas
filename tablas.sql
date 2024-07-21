@@ -69,6 +69,7 @@ CREATE TABLE IF NOT EXISTS Respuestas (
     imagenURL VARCHAR(255) NOT NULL,
     correcta BOOLEAN NOT NULL,
     pregunta INT NOT NULL,
+    tipo INT NOT NULL,
     CONSTRAINT Respuestas_Pregunta_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Opciones_IdRespuesta_PK PRIMARY KEY (id_respuesta)
 );
