@@ -54,6 +54,7 @@ DROP TABLE IF EXISTS Preguntas;
 CREATE TABLE IF NOT EXISTS Preguntas (
     id_pregunta INT AUTO_INCREMENT,
     pregunta VARCHAR(100) NOT NULL,
+    tipo INT NOT NULL,
     imagen_url VARCHAR(500) NOT NULL,
     nivel INT NOT NULL,
     CONSTRAINT Preguntas_nivel_FK FOREIGN KEY (nivel) REFERENCES Niveles(id_nivel) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -69,7 +70,6 @@ CREATE TABLE IF NOT EXISTS Respuestas (
     imagenURL VARCHAR(255) NOT NULL,
     correcta BOOLEAN NOT NULL,
     pregunta INT NOT NULL,
-    tipo INT NOT NULL,
     CONSTRAINT Respuestas_Pregunta_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Opciones_IdRespuesta_PK PRIMARY KEY (id_respuesta)
 );
