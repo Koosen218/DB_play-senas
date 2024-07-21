@@ -1,6 +1,6 @@
 -- Crear procedimiento crear_usuario
 
-DELIMITER $$
+DELIMITER //
 
 CREATE OR REPLACE PROCEDURE crear_usuario(
     IN p_nombre VARCHAR(50),
@@ -13,27 +13,10 @@ CREATE OR REPLACE PROCEDURE crear_usuario(
 BEGIN
     INSERT INTO Usuarios (nombre, apellido, email, contra, foto_perfil, tipo)
     VALUES (p_nombre, p_apellido, p_email, p_contra, p_foto_perfil, p_tipo);
-END $$
-
-DELIMITER ;
-
-DELIMITER //
-
-CREATE PROCEDURE crear_usuario(
-  IN p_nombre VARCHAR(50),
-  IN p_apellido VARCHAR(50),
-  IN p_email VARCHAR(50),
-  IN p_contra VARCHAR(50),
-  IN p_foto_perfil VARCHAR(400),
-  IN p_tipo INT
-)
-BEGIN
-  INSERT INTO Usuarios (nombre, apellido, email, contra, foto_perfil, tipo)
-  VALUES (p_nombre, p_apellido, p_email, p_contra, p_foto_perfil, p_tipo);
-END;
+END //
 DELIMITER;
 
--- Crear procedimiento IniciarSesion
+-- Crear procedimiento iniciar_sesion
 DELIMITER //
 
 CREATE OR REPLACE PROCEDURE iniciar_sesion (
@@ -97,6 +80,7 @@ UPDATE Usuarios
 SET nombre = p_nombre, apellido = p_apellido, foto_perfil = p_foto_perfil
 WHERE id_usuario = p_id;
 END //
+DELIMITER;
 
 
 
