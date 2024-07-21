@@ -181,12 +181,13 @@ DELIMITER //
 
 CREATE PROCEDURE CrearPregunta(
     IN p_pregunta VARCHAR(100),
+    IN p_tipo INT,
     IN p_imagen_url VARCHAR(500),
     IN p_nivel INT
 )
 BEGIN
-    INSERT INTO Preguntas (pregunta, imagen_url, nivel)
-    VALUES (p_pregunta, p_imagen_url, p_nivel);
+    INSERT INTO Preguntas (pregunta, tipo, imagen_url, nivel)
+    VALUES (p_pregunta, p_tipo, p_imagen_url, p_nivel);
 END //
 
 DELIMITER ;
@@ -209,12 +210,14 @@ DELIMITER //
 CREATE PROCEDURE ActualizarPregunta(
     IN p_id_pregunta INT,
     IN p_pregunta VARCHAR(100),
+    IN p_tipo INT,
     IN p_imagen_url VARCHAR(500),
     IN p_nivel INT
 )
 BEGIN
     UPDATE Preguntas
     SET pregunta = p_pregunta,
+        tipo = p_tipo,
         imagen_url = p_imagen_url,
         nivel = p_nivel
     WHERE id_pregunta = p_id_pregunta;
