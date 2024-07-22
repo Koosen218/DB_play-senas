@@ -47,7 +47,6 @@ CREATE TABLE IF NOT EXISTS Niveles (
 -- Asumiendo que el id_etapa para 'Abecedario' es 1, para 'Números' es 2, para 'Palabras de Relación' es 3 y para 'Colores' es 4.
 
 -- Niveles para la etapa 'Abecedario'
--- Niveles para la etapa 'Abecedario'
 INSERT INTO Niveles (nombre, descripcion, etapa, exp) VALUES
 ('Nivel 1', 'Rango de letras de A a E en el abecedario en lenguaje de señas.', 1, 0),
 ('Nivel 2', 'Rango de letras de F a K en el abecedario en lenguaje de señas.', 1, 10),
@@ -155,12 +154,7 @@ INSERT INTO Lecciones (nombre, descripcion, video_url, nivel) VALUES
 SELECT * FROM Lecciones;
 
 
--- SHOW TABLES;
--- DROP TABLE IF EXISTS Tipo_Preguntas;
--- CREATE TABLE IF NOT EXISTS Tipo_Preguntas (
---   id_tipo INT PRIMARY KEY AUTO_INCREMENT,
---   tipo VARCHAR(50) NOT NULL
--- );
+
 SHOW TABLES;
 DROP TABLE IF EXISTS Preguntas;
 CREATE TABLE IF NOT EXISTS Preguntas (
@@ -569,33 +563,6 @@ INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 --------------------------------------------------
 -- etapa 2
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
@@ -754,19 +721,6 @@ INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 -----------------------------------------------------
 --etapa 3
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
@@ -863,9 +817,6 @@ INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 
 
 
-
-
-
 --------------------------------------------------
 --etapa 4
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
@@ -951,21 +902,7 @@ INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 
 
 
-
-
-
-
-
-
 ----------------------------------------------------
-SHOW TABLES;
-
--- DROP TABLE IF EXISTS Tipo_Usuario;
--- CREATE TABLE IF NOT EXISTS Tipo_Usuario (
---     id_tipo INT,
---     tipo VARCHAR(50) NOT NULL,
---     CONSTRAINT Tipo_Usuario_IdTipo_PK PRIMARY KEY (id_tipo)
--- );
 
 SHOW TABLES;
 DROP TABLE IF EXISTS Usuarios;
@@ -983,22 +920,21 @@ CREATE TABLE IF NOT EXISTS Usuarios (
 SHOW TABLES;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO Usuarios (nombre, apellido, email, contra, tipo, exp) VALUES
+('Carlos', 'González', 'carlos.gonzalez@example.com', 'password123',  1, 10),
+('Ana', 'Martínez', 'ana.martinez@example.com', 'password123',  2, 20),
+('Luis', 'Pérez', 'luis.perez@example.com', 'password123',  1, 15),
+('María', 'López', 'maria.lopez@example.com', 'password123',  2, 25),
+('Jorge', 'Sánchez', 'jorge.sanchez@example.com', 'password123',  1, 30),
+('Lucía', 'Ramírez', 'lucia.ramirez@example.com', 'password123',  2, 35),
+('Pedro', 'Torres', 'pedro.torres@example.com', 'password123', 1, 5),
+('Carmen', 'Flores', 'carmen.flores@example.com', 'password123', 2, 40),
+('Juan', 'Hernández', 'juan.hernandez@example.com', 'password123', 1, 50),
+('Sofía', 'Díaz', 'sofia.diaz@example.com', 'password123', 2, 45),
+('Ricardo', 'Vargas', 'ricardo.vargas@example.com', 'password123',  1, 60),
+('Elena', 'Mendoza', 'elena.mendoza@example.com', 'password123',  2, 55),
+('Manuel', 'Cruz', 'manuel.cruz@example.com', 'password123',  1, 70),
+('Paula', 'Gutiérrez', 'paula.gutierrez@example.com', 'password123', 2, 65);
 
 
 
@@ -1033,59 +969,3 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-INSERT INTO Usuarios (nombre, apellido, email, contra, tipo, exp) VALUES
-('Carlos', 'González', 'carlos.gonzalez@example.com', 'password123',  1, 10),
-('Ana', 'Martínez', 'ana.martinez@example.com', 'password123',  2, 20),
-('Luis', 'Pérez', 'luis.perez@example.com', 'password123',  1, 15),
-('María', 'López', 'maria.lopez@example.com', 'password123',  2, 25),
-('Jorge', 'Sánchez', 'jorge.sanchez@example.com', 'password123',  1, 30),
-('Lucía', 'Ramírez', 'lucia.ramirez@example.com', 'password123',  2, 35),
-('Pedro', 'Torres', 'pedro.torres@example.com', 'password123', 1, 5),
-('Carmen', 'Flores', 'carmen.flores@example.com', 'password123', 2, 40),
-('Juan', 'Hernández', 'juan.hernandez@example.com', 'password123', 1, 50),
-('Sofía', 'Díaz', 'sofia.diaz@example.com', 'password123', 2, 45),
-('Ricardo', 'Vargas', 'ricardo.vargas@example.com', 'password123',  1, 60),
-('Elena', 'Mendoza', 'elena.mendoza@example.com', 'password123',  2, 55),
-('Manuel', 'Cruz', 'manuel.cruz@example.com', 'password123',  1, 70),
-('Paula', 'Gutiérrez', 'paula.gutierrez@example.com', 'password123', 2, 65);
