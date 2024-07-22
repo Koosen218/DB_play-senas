@@ -963,7 +963,7 @@ INSERT INTO Ayuda (pregunta, respuesta) VALUES
 ('¿Cuánto tiempo me llevará aprender lenguaje de señas básico?', 'El tiempo necesario para aprender lenguaje de señas básico varía según la dedicación y el método de aprendizaje utilizado. Con práctica regular, es posible aprender las señas básicas en unos pocos meses.'),
 ('¿Puedo usar lenguaje de señas panameño para comunicarme con personas que usan otros lenguajes de señas?', 'Aunque hay similitudes entre algunos lenguajes de señas, cada país tiene su propio sistema de señas. Sin embargo, aprender un lenguaje de señas puede facilitar el aprendizaje de otros lenguajes de señas.');
 
-Select * FROM Ayuda;
+Select * FROM Ayuda
 
 
 -- borrar todo para levantar nuevamente

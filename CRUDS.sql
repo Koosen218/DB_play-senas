@@ -191,6 +191,19 @@ DELIMITER ;
 
 DELIMITER //
 
+CREATE OR REPLACE PROCEDURE ObtenerPregunta(
+    IN p_id_pregunta INT
+)
+BEGIN
+    SELECT *
+    FROM Pregunta
+    WHERE id_pregunta = p_id_pregunta;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
 CREATE OR REPLACE PROCEDURE ActualizarPregunta(
     IN p_id_pregunta INT,
     IN p_pregunta VARCHAR(100),
