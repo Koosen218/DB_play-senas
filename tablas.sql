@@ -354,9 +354,9 @@ INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 -- Pregunta 3
 ('Esta seña corresponde a:  ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625957/Crema_cg8yga.png', 14, 1), --Crema
 -- Pregunta 4
-('Esta seña corresponde a ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625950/Blanco_p1lxar.png', 14, 2), --Blanco
+('Esta seña corresponde a ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625950/Blanco_p1lxar.png', 14, 1), --Blanco
 -- Pregunta 5
-('Esta seña scorresponde a ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625955/Celeste_gvbwft.png', 14, 2), --Celeste
+('Esta seña scorresponde a ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625955/Celeste_gvbwft.png', 14, 1), --Celeste
 -- Pregunta 6
 ('¿Esta seña significa "Gris"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625947/Gris_dwy0mc.png', 14, 2), --Gris
 
@@ -367,7 +367,7 @@ INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 -- Pregunta 2
 ('¿Esta seña significa "Dorado"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625842/Amarillo_qtetw4.png', 15, 2), --Amarillo
 -- Pregunta 3
-('¿Esta seña significa "Cobre"?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625955/Celeste_gvbwft.png', 15, 1), --Celeste
+('¿Esta seña significa "Cobre"?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625955/Celeste_gvbwft.png', 15, 2), --Celeste
 -- Pregunta 4
 ('Esta seña corresponde a: "Dorado"', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721626091/Dorado_rftngy.png', 15, 2), --Dorado
 -- Pregunta 5
@@ -461,6 +461,96 @@ INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 ('Cierto', TRUE, 12),
 ('Falso', FALSE, 12);
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('O', TRUE, 13),
+('A', FALSE, 13),
+('E', FALSE, 13),
+('C', FALSE, 13);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('L', TRUE, 14),
+('M', FALSE, 14),
+('N', FALSE, 14),
+('Ñ', FALSE, 14);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Cierto', TRUE, 15),
+('Falso', FALSE, 15);
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Cierto', TRUE, 16),
+('Falso', FALSE, 16);
+
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('LL', TRUE, 17),
+('L', FALSE, 17),
+('M', FALSE, 17),
+('N', FALSE, 17);
+
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Cierto', TRUE, 18),
+('Falso', FALSE, 18);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('P', TRUE, 19),
+('Q', FALSE, 19),
+('R', FALSE, 19),
+('S', FALSE, 19);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('T', TRUE, 20),
+('U', FALSE, 20),
+('V', FALSE, 20),
+('W', FALSE, 20);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Cierto', TRUE, 21),
+('Falso', FALSE, 21);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Cierto', TRUE, 22),
+('Falso', FALSE, 22);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('S', TRUE, 23),
+('T', FALSE, 23),
+('U', FALSE, 23),
+('V', FALSE, 23);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Cierto', TRUE, 24),
+('Falso', FALSE, 24);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Y', TRUE, 25),
+('Z', FALSE, 25),
+('U', FALSE, 25),
+('V', FALSE, 25);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Z', TRUE, 26),
+('X', FALSE, 26),
+('Y', FALSE, 26),
+('W', FALSE, 26);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Cierto', TRUE, 27),
+('Falso', FALSE, 27);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Cierto', TRUE, 28),
+('Falso', FALSE, 28);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('X', TRUE, 29),
+('Y', FALSE, 29),
+('W', FALSE, 29),
+('V', FALSE, 29);
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+('Cierto', TRUE, 30),
+('Falso', FALSE, 30)
 
 
 
@@ -472,6 +562,393 @@ INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------
+-- etapa 2
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 1 (nivel 6)
+('1', FALSE, 31),
+('2', TRUE, 31),
+('3', FALSE, 31),
+('4', FALSE, 31),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 2 (nivel 6)
+('1', FALSE, 32),
+('3', FALSE, 32),
+('5', TRUE, 32),
+('6', FALSE, 32),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 3 (nivel 6)
+('2', FALSE, 33),
+('3', TRUE, 33),
+('4', FALSE, 33),
+('5', FALSE, 33),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 4 (nivel 6)
+('5', FALSE, 34),
+('6', TRUE, 34),
+('7', FALSE,34),
+('8', FALSE, 34),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 5 (nivel 6)
+('7', FALSE, 35),
+('8', TRUE, 35),
+('9', FALSE, 35),
+('10', FALSE, 35),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 6 (nivel 6)
+('1', TRUE, 36),
+('2', FALSE, 36),
+('3', FALSE, 36),
+('4', FALSE, 36),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 1 (nivel 7)
+('9', FALSE, 37),
+('10', TRUE, 37),
+('11', FALSE, 37),
+('12', FALSE, 37),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 2 (nivel 7)
+('11', FALSE, 38),
+('12', TRUE, 38),
+('13', FALSE, 38),
+('14', FALSE, 38),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 3 (nivel 7)
+('10', FALSE, 39),
+('11', TRUE, 39),
+('12', FALSE, 39),
+('13', FALSE, 39),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 4 (nivel 7)
+('12', FALSE, 40),
+('13', TRUE, 40),
+('14', FALSE, 40),
+('15', FALSE, 40),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 5 (nivel 7)
+('Cierto', FALSE, 41),
+('Falso', TRUE, 41),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 6 (nivel 7)
+('Cierto', TRUE, 42),
+('Falso', FALSE, 42),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 1 (nivel 8)
+('20', FALSE, 43),
+('30', TRUE, 43),
+('40', FALSE, 43),
+('50', FALSE, 43),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 2 (nivel 8)
+('10', FALSE, 44),
+('20', TRUE, 44),
+('30', FALSE, 44),
+('40', FALSE, 44),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 3 (nivel 8)
+('Cierto', FALSE, 45),
+('Falso', TRUE, 45),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 4 (nivel 8)
+('20', FALSE, 46),
+('30', FALSE, 46),
+('40', TRUE, 46),
+('50', FALSE, 46),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 5 (nivel 8)
+('Cierto', FALSE, 47),
+('Falso', TRUE, 47),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 6 (nivel 8)
+('Cierto', TRUE, 48),
+('Falso', FALSE, 48),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 1 (nivel 9)
+('100', TRUE, 49),
+('200', FALSE, 49),
+('300', FALSE, 49),
+('400', FALSE, 49),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 2 (nivel 9)
+('100', FALSE, 50),
+('200', TRUE, 50),
+('300', FALSE, 50),
+('400', FALSE, 50),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 3 (nivel 9)
+('Cierto', FALSE, 51),
+('Falso', TRUE, 51),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 4 (nivel 9)
+('100', TRUE, 52),
+('200', FALSE, 52),
+('300', FALSE, 52),
+('400', FALSE, 52),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 5 (nivel 9)
+('Cierto', TRUE, 53),
+('Falso', FALSE, 53),
+
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 6 (nivel 9)
+('Cierto', TRUE, 54),
+('Falso', FALSE, 54);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------
+--etapa 3
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 1 (nivel 10)
+('Adiós', TRUE, 55),
+('Hola', FALSE, 55),
+('Bien', FALSE, 55),
+('Ayúdeme', FALSE, 55),
+
+-- Respuestas para Pregunta 2 (nivel 10)
+('Hola', FALSE, 56),
+('Bien', TRUE, 56),
+('Adiós', FALSE, 56),
+('Ayúdeme', FALSE, 56),
+
+-- Respuestas para Pregunta 3 (nivel 10)
+('Cierto', TRUE, 57),
+('Falso', FALSE, 57),
+
+-- Respuestas para Pregunta 4 (nivel 10)
+('Cierto', FALSE, 58),
+('Falso', TRUE, 58),
+
+-- Respuestas para Pregunta 5 (nivel 10)
+('Hola', TRUE, 59),
+('Adiós', FALSE, 59),
+('Bien', FALSE, 59),
+('Ayúdeme', FALSE, 59),
+
+-- Respuestas para Pregunta 6 (nivel 10)
+('Cierto', FALSE, 60),
+('Falso', TRUE, 60),
+
+-- Respuestas para Pregunta 1 (nivel 11)
+('Difícil', TRUE, 61),
+('De nada', FALSE, 61),
+('Gracias', FALSE, 61),
+('Fácil', FALSE, 61),
+
+-- Respuestas para Pregunta 2 (nivel 11)
+('Hola', FALSE, 62),
+('De nada', TRUE, 62),
+('Difícil', FALSE, 62),
+('Gracias', FALSE, 62),
+
+-- Respuestas para Pregunta 3 (nivel 11)
+('Cierto', FALSE, 63),
+('Falso', TRUE, 63),
+
+-- Respuestas para Pregunta 4 (nivel 11)
+('Cierto', FALSE, 64),
+('Falso', TRUE, 64),
+
+-- Respuestas para Pregunta 5 (nivel 11)
+('Gracias', TRUE, 65),
+('Hola', FALSE, 65),
+('De nada', FALSE, 65),
+('Difícil', FALSE, 65),
+
+-- Respuestas para Pregunta 6 (nivel 11)
+('Cierto', TRUE, 66),
+('Falso', FALSE, 66),
+
+-- Respuestas para Pregunta 1 (nivel 12)
+('Mal', TRUE, 67),
+('Malo', FALSE, 67),
+('Yo me llamo', FALSE, 67),
+('De nada', FALSE, 67),
+
+-- Respuestas para Pregunta 2 (nivel 12)
+('Hola', FALSE, 68),
+('Malo', TRUE, 68),
+('Mal', FALSE, 68),
+('Mi nombre', FALSE, 68),
+
+-- Respuestas para Pregunta 3 (nivel 12)
+('Cierto', FALSE, 69),
+('Falso', TRUE, 69),
+
+-- Respuestas para Pregunta 4 (nivel 12)
+('Cierto', FALSE, 70),
+('Falso', TRUE, 70),
+
+-- Respuestas para Pregunta 5 (nivel 12)
+('Yo me llamo', TRUE, 71),
+('Mi nombre', FALSE, 71),
+('Nadie', FALSE, 71),
+('De nada', FALSE, 71),
+
+-- Respuestas para Pregunta 6 (nivel 12)
+('Cierto', FALSE, 72),
+('Falso', TRUE, 72);
+
+
+
+
+
+
+
+--------------------------------------------------
+--etapa 4
+INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
+-- Respuestas para Pregunta 1 (nivel 13)
+('Cierto', FALSE, 73),
+('Falso', TRUE, 73),
+
+-- Respuestas para Pregunta 2 (nivel 13)
+('Cierto', FALSE, 74),
+('Falso', TRUE, 74),
+
+-- Respuestas para Pregunta 3 (nivel 13)
+('Cierto', FALSE, 75),
+('Falso', TRUE, 75),
+
+-- Respuestas para Pregunta 4 (nivel 13)
+('Cierto', FALSE, 76),
+('Falso', TRUE, 76),
+
+-- Respuestas para Pregunta 5 (nivel 13)
+('Cierto', FALSE, 77),
+('Falso', TRUE, 77),
+
+-- Respuestas para Pregunta 6 (nivel 13)
+('Cierto', FALSE, 78),
+('Falso', TRUE, 78),
+
+-- Respuestas para Pregunta 1 (nivel 14)
+('Cierto', FALSE, 79),
+('Falso', TRUE, 79),
+
+-- Respuestas para Pregunta 2 (nivel 14)
+('Cierto', FALSE, 80),
+('Falso', TRUE, 80),
+
+-- Respuestas para Pregunta 3 (nivel 14)
+('Blanco', FALSE, 81),
+('Crema', TRUE, 81),
+('Gris', FALSE, 81),
+('Verde', FALSE, 81),
+
+-- Respuestas para Pregunta 4 (nivel 14)
+('Crema', FALSE, 82),
+('Blanco', TRUE, 82),
+('Gris', FALSE, 82),
+('Verde', FALSE, 82),
+
+-- Respuestas para Pregunta 5 (nivel 14)
+('Crema', FALSE, 83),
+('Celeste', TRUE, 83),
+('Gris', FALSE, 83),
+('Verde', FALSE, 83),
+
+-- Respuestas para Pregunta 6 (nivel 14)
+('Cierto', TRUE, 84),
+('Falso', FALSE, 84),
+
+-- Respuestas para Pregunta 1 (nivel 15)
+('Cierto', FALSE, 85),
+('Falso', TRUE, 85),
+
+-- Respuestas para Pregunta 2 (nivel 15)
+('Cierto', FALSE, 86),
+('Falso', TRUE, 86),
+
+-- Respuestas para Pregunta 3 (nivel 15)
+('Cierto', FALSE, 87),
+('Falso', TRUE, 87),
+
+-- Respuestas para Pregunta 4 (nivel 15)
+('Cierto', TRUE, 88),
+('Falso', FALSE, 88),
+
+-- Respuestas para Pregunta 5 (nivel 15)
+('Cierto', TRUE, 89),
+('Falso', FALSE, 89),
+
+-- Respuestas para Pregunta 6 (nivel 15)
+('Cierto', TRUE, 90),
+('Falso', FALSE, 90);
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------
 SHOW TABLES;
 
 -- DROP TABLE IF EXISTS Tipo_Usuario;
