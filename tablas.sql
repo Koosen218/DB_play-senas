@@ -12,10 +12,12 @@ show DATABASES;
 CREATE OR REPlACE DATABASE `juegos_senas`;
 USE `juegos_senas`
 SHOW TABLES;
+
 DROP TABLE IF EXISTS Etapas;
 CREATE TABLE IF NOT EXISTS Etapas (
     id_etapa INT AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,
+    imagen_url VARCHAR(500) NULL,
     descripcion VARCHAR(500) NOT NULL,
     imagen_url VARCHAR(1000),
     CONSTRAINT Etapas_IdEtapa_PK PRIMARY KEY (id_etapa)
@@ -32,6 +34,7 @@ SELECT * FROM Etapas;
 
 
 SHOW TABLES;
+
 DROP TABLE IF EXISTS Niveles;
 CREATE TABLE IF NOT EXISTS Niveles (
     id_nivel INT AUTO_INCREMENT,
@@ -80,6 +83,7 @@ SELECT * FROM Niveles;
 
 
 SHOW TABLES;
+
 DROP TABLE IF EXISTS Lecciones;
 CREATE TABLE IF NOT EXISTS Lecciones (
     id_leccion INT AUTO_INCREMENT,
@@ -156,10 +160,12 @@ SELECT * FROM Lecciones;
 
 
 SHOW TABLES;
+
 DROP TABLE IF EXISTS Preguntas;
 CREATE TABLE IF NOT EXISTS Preguntas (
     id_pregunta INT AUTO_INCREMENT,
     pregunta VARCHAR(100) NOT NULL,
+    tipo INT NOT NULL,
     imagen_url VARCHAR(500) NOT NULL,
     nivel INT NOT NULL,
     tipo INT NOT NULL,
@@ -385,12 +391,14 @@ SELECT * FROM Preguntas;
 
 
 SHOW TABLES;
+
 DROP TABLE IF EXISTS Respuestas;
 CREATE TABLE IF NOT EXISTS Respuestas (
     id_respuesta INT AUTO_INCREMENT,
     respuesta VARCHAR(50) NOT NULL,
     correcta BOOLEAN NOT NULL,
     pregunta INT NOT NULL,
+    CONSTRAINT Respuestas_Pregunta_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Respuestas_Pregunta_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Opciones_IdRespuesta_PK PRIMARY KEY (id_respuesta)
 );
@@ -917,6 +925,7 @@ CREATE TABLE IF NOT EXISTS Usuarios (
   exp INT NOT NULL DEFAULT 0,
   CONSTRAINT `PK_Usuarios_id` PRIMARY KEY (id_usuario)
 );
+
 SHOW TABLES;
 
 
