@@ -1,9 +1,13 @@
 DELIMITER //
 
 -- Create
-CREATE PROCEDURE CreateEtapa(IN p_nombre VARCHAR(50), IN p_descripcion VARCHAR(500), p_imagen_url VARCHAR(1000))
+CREATE PROCEDURE CrearEtapa(
+    IN p_nombre VARCHAR(50), 
+    IN p_descripcion VARCHAR(500), 
+    p_imagen_url VARCHAR(1000))
 BEGIN
-    INSERT INTO Etapas (nombre, descripcion, imagen_url) VALUES (p_nombre, p_descripcion, p_imagen_url);
+    INSERT INTO Etapas (nombre, descripcion, imagen_url) 
+    VALUES (p_nombre, p_descripcion, p_imagen_url);
 END //
 
 DELIMITER ;
@@ -11,7 +15,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ObtenerEtapa(
+CREATE PROCEDURE ReadEtapa(
     IN p_id_etapa INT
 )
 BEGIN
@@ -21,9 +25,17 @@ BEGIN
 END //
 
 -- Update
-CREATE PROCEDURE UpdateEtapa(IN p_id_etapa INT, IN p_nombre VARCHAR(50), IN p_descripcion VARCHAR(500), p_imagen_url VARCHAR(1000))
+CREATE PROCEDURE UpdateEtapa(
+    IN p_id_etapa INT, 
+    IN p_nombre VARCHAR(50), 
+    IN p_descripcion VARCHAR(500), 
+    p_imagen_url VARCHAR(1000))
 BEGIN
-    UPDATE Etapas SET nombre = p_nombre, descripcion = p_descripcion, imagen_url = p_imagen_url WHERE id_etapa = p_id_etapa;
+    UPDATE Etapas 
+    SET nombre = p_nombre, 
+        descripcion = p_descripcion, 
+        imagen_url = p_imagen_url 
+    WHERE id_etapa = p_id_etapa;
 END //
 
 DELIMITER ;
@@ -49,7 +61,8 @@ CREATE PROCEDURE CrearNivel(
     IN p_exp INT
 )
 BEGIN
-    INSERT INTO Niveles (nombre, descripcion, etapa, exp) VALUES (p_nombre, p_descripcion, p_etapa, p_exp);
+    INSERT INTO Niveles (nombre, descripcion, etapa, exp) 
+    VALUES (p_nombre, p_descripcion, p_etapa, p_exp);
 END //
 
 DELIMITER ;
@@ -109,7 +122,8 @@ CREATE PROCEDURE CrearLeccion(
     IN p_nivel INT
 )
 BEGIN
-    INSERT INTO Lecciones (nombre, descripcion, imagen_url, video_url, nivel) VALUES (p_nombre, p_descripcion, p_imagen_url, p_video_url, p_nivel);
+    INSERT INTO Lecciones (nombre, descripcion, video_url, nivel) 
+    VALUES (p_nombre, p_descripcion, p_video_url, p_nivel);
 END //
 
 DELIMITER ;
@@ -162,6 +176,21 @@ DELIMITER ;
 
 DELIMITER //
 
+CREATE PROCEDURE CrearPregunta(
+    IN p_pregunta VARCHAR(100),
+    IN p_imagen_url VARCHAR(500),
+    IN p_nivel INT,
+    IN p_tipo INT
+)
+BEGIN
+    INSERT INTO Lecciones (nombre, imagen_url, nivel, tipo) 
+    VALUES (p_nombre, p_imagen_url, p_nivel, p_tipo);
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
 CREATE PROCEDURE ActualizarPregunta(
     IN p_id_pregunta INT,
     IN p_pregunta VARCHAR(100),
@@ -170,7 +199,9 @@ CREATE PROCEDURE ActualizarPregunta(
     IN p_nivel INT
 )
 BEGIN
-    INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES (p_pregunta, p_imagen_url, p_nivel, p_tipo);
+    INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) 
+    VALUES (p_pregunta, p_imagen_url, p_nivel, p_tipo);
+    WHERE id_pregunta = p_id_pregunta;
 END //
 
 DELIMITER ;
@@ -196,8 +227,8 @@ CREATE PROCEDURE CrearRespuesta(
     IN p_pregunta INT
 )
 BEGIN
-    INSERT INTO Respuestas (respuesta, imagenURL, correcta, pregunta)
-    VALUES (p_respuesta, p_imagen_url, p_correcta, p_pregunta);
+    INSERT INTO Respuestas (respuesta, correcta, pregunta)
+    VALUES (p_respuesta, p_correcta, p_pregunta);
 END //
 
 DELIMITER ;
