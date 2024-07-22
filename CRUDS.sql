@@ -1,7 +1,7 @@
 DELIMITER //
 
 -- Create
-CREATE PROCEDURE CrearEtapa(
+CREATE OR REPLACE PROCEDURE CrearEtapa(
     IN p_nombre VARCHAR(50), 
     IN p_descripcion VARCHAR(500), 
     p_imagen_url VARCHAR(1000))
@@ -15,7 +15,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ReadEtapa(
+CREATE OR REPLACE PROCEDURE ReadEtapa(
     IN p_id_etapa INT
 )
 BEGIN
@@ -25,7 +25,7 @@ BEGIN
 END //
 
 -- Update
-CREATE PROCEDURE UpdateEtapa(
+CREATE OR REPLACE PROCEDURE UpdateEtapa(
     IN p_id_etapa INT, 
     IN p_nombre VARCHAR(50), 
     IN p_descripcion VARCHAR(500), 
@@ -42,7 +42,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE EliminarEtapa(
+CREATE OR REPLACE PROCEDURE EliminarEtapa(
     IN p_id_etapa INT
 )
 BEGIN
@@ -54,7 +54,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE CrearNivel(
+CREATE OR REPLACE PROCEDURE CrearNivel(
     IN p_nombre VARCHAR(50),
     IN p_descripcion VARCHAR(500),
     IN p_etapa INT,
@@ -69,7 +69,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ObtenerNivel(
+CREATE OR REPLACE PROCEDURE ObtenerNivel(
     IN p_id_nivel INT
 )
 BEGIN
@@ -82,7 +82,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ActualizarNivel(
+CREATE OR REPLACE PROCEDURE ActualizarNivel(
     IN p_id_nivel INT,
     IN p_nombre VARCHAR(50),
     IN p_descripcion VARCHAR(500),
@@ -102,7 +102,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE EliminarNivel(
+CREATE OR REPLACE PROCEDURE EliminarNivel(
     IN p_id_nivel INT
 )
 BEGIN
@@ -115,7 +115,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE CrearLeccion(
+CREATE OR REPLACE PROCEDURE CrearLeccion(
     IN p_nombre VARCHAR(50),
     IN p_descripcion VARCHAR(500),
     IN p_video_url VARCHAR(500),
@@ -130,7 +130,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ObtenerLeccion(
+CREATE OR REPLACE PROCEDURE ObtenerLeccion(
     IN p_id_leccion INT
 )
 BEGIN
@@ -143,7 +143,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ActualizarLeccion(
+CREATE OR REPLACE PROCEDURE ActualizarLeccion(
     IN p_id_leccion INT,
     IN p_nombre VARCHAR(50),
     IN p_descripcion VARCHAR(500),
@@ -163,7 +163,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE EliminarLeccion(
+CREATE OR REPLACE PROCEDURE EliminarLeccion(
     IN p_id_leccion INT
 )
 BEGIN
@@ -176,7 +176,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE CrearPregunta(
+CREATE OR REPLACE PROCEDURE CrearPregunta(
     IN p_pregunta VARCHAR(100),
     IN p_imagen_url VARCHAR(500),
     IN p_nivel INT,
@@ -191,24 +191,28 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ActualizarPregunta(
+CREATE OR REPLACE PROCEDURE ActualizarPregunta(
     IN p_id_pregunta INT,
     IN p_pregunta VARCHAR(100),
-    IN p_tipo INT,
     IN p_imagen_url VARCHAR(500),
-    IN p_nivel INT
+    IN p_nivel INT,
+    IN p_tipo INT
 )
 BEGIN
-    INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) 
-    VALUES (p_pregunta, p_imagen_url, p_nivel, p_tipo);
+    UPDATE Preguntas
+    SET pregunta = p_pregunta,
+        imagen_url = p_imagen_url,
+        nivel = p_nivel,
+        tipo = p_tipo
     WHERE id_pregunta = p_id_pregunta;
 END //
 
 DELIMITER ;
 
+
 DELIMITER //
 
-CREATE PROCEDURE EliminarPregunta(
+CREATE OR REPLACE PROCEDURE EliminarPregunta(
     IN p_id_pregunta INT
 )
 BEGIN
@@ -220,7 +224,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE CrearRespuesta(
+CREATE OR REPLACE PROCEDURE CrearRespuesta(
     IN p_respuesta VARCHAR(50),
     IN p_imagen_url VARCHAR(255),
     IN p_correcta BOOLEAN,
@@ -235,7 +239,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ObtenerRespuesta(
+CREATE OR REPLACE PROCEDURE ObtenerRespuesta(
     IN p_id_respuesta INT
 )
 BEGIN
@@ -248,7 +252,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ActualizarRespuesta(
+CREATE OR REPLACE PROCEDURE ActualizarRespuesta(
     IN p_id_respuesta INT,
     IN p_respuesta VARCHAR(50),
     IN p_imagen_url VARCHAR(255),
@@ -268,7 +272,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE EliminarRespuesta(
+CREATE OR REPLACE PROCEDURE EliminarRespuesta(
     IN p_id_respuesta INT
 )
 BEGIN
@@ -280,7 +284,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE CrearUsuario(
+CREATE OR REPLACE PROCEDURE CrearUsuario(
     IN p_nombre VARCHAR(50),
     IN p_apellido VARCHAR(50),
     IN p_email VARCHAR(50),
@@ -298,7 +302,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ObtenerUsuario(
+CREATE OR REPLACE PROCEDURE ObtenerUsuario(
     IN p_id_usuario INT
 )
 BEGIN
@@ -311,7 +315,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE ActualizarUsuario(
+CREATE OR REPLACE PROCEDURE ActualizarUsuario(
     IN p_id_usuario INT,
     IN p_nombre VARCHAR(50),
     IN p_apellido VARCHAR(50),
@@ -337,7 +341,7 @@ DELIMITER ;
 
 DELIMITER //
 
-CREATE PROCEDURE EliminarUsuario(
+CREATE OR REPLACE PROCEDURE EliminarUsuario(
     IN p_id_usuario INT
 )
 BEGIN
