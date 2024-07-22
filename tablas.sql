@@ -27,7 +27,7 @@ INSERT INTO Etapas (nombre, descripcion, imagen_url) VALUES
 ('Palabras de Relación', 'Etapa que cubre el aprendizaje de palabras de relación en lenguaje de señas.', 'https://res.cloudinary.com/dpizfkmea/image/upload/v1721616134/relacion_u2ocqf.jpg'),
 ('Colores', 'Etapa que cubre el aprendizaje de los colores en lenguaje de señas.', 'https://res.cloudinary.com/dpizfkmea/image/upload/v1721616130/colores_icrjyd.jpg');
 
-
+SELECT * FROM Etapas;
 
 
 
@@ -73,6 +73,11 @@ INSERT INTO Niveles (nombre, descripcion, etapa, exp) VALUES
 ('Nivel 1', 'Colores básicos en lenguaje de señas: Rojo, Azul, Amarillo, Verde.', 4, 120),
 ('Nivel 2', 'Colores intermedios en lenguaje de señas: Blanco, Celeste, Crema, Gris.', 4, 130),
 ('Nivel 3', 'Colores avanzados en lenguaje de señas: Morado, Cobre, Plata, Dorado.', 4, 140);
+SELECT * FROM Niveles;
+
+
+
+
 
 
 SHOW TABLES;
@@ -135,8 +140,19 @@ INSERT INTO Lecciones (nombre, descripcion, video_url, nivel) VALUES
 INSERT INTO Lecciones (nombre, descripcion, video_url, nivel) VALUES
 ('Palabras Nivel 3', 'Lección sobre palabras de relacion en lenguaje de señas.', 'https://res.cloudinary.com/dpizfkmea/video/upload/v1721619222/Etapa3N3_ch6ns2.mp4', 12);
 
+-- Nivel 13
+INSERT INTO Lecciones (nombre, descripcion, video_url, nivel) VALUES
+('Colores Nivel 1', 'Lección sobre Colores en lenguaje de señas.', 'https://res.cloudinary.com/dpizfkmea/video/upload/v1721630634/Etapa4N1_ik5icv.mp4', 13);
 
+-- Nivel 14
+INSERT INTO Lecciones (nombre, descripcion, video_url, nivel) VALUES
+('Colores Nivel 2', 'Lección sobre Colores en lenguaje de señas.', 'https://res.cloudinary.com/dpizfkmea/video/upload/v1721630632/Etapa4N2_h8lzyx.mp4', 14);
 
+-- Nivel 15
+INSERT INTO Lecciones (nombre, descripcion, video_url, nivel) VALUES
+('Colores Nivel 3', 'Lección sobre Colores en lenguaje de señas.', 'https://res.cloudinary.com/dpizfkmea/video/upload/v1721630636/Etapa4N3_uujcow.mp4', 15);
+
+SELECT * FROM Lecciones;
 
 
 -- SHOW TABLES;
@@ -153,7 +169,6 @@ CREATE TABLE IF NOT EXISTS Preguntas (
     imagen_url VARCHAR(500) NOT NULL,
     nivel INT NOT NULL,
     tipo INT NOT NULL,
-    --CONSTRAINT Preguntas_Tipo_FK FOREIGN KEY (tipo) REFERENCES Tipo_Preguntas(id_tipo) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Preguntas_nivel_FK FOREIGN KEY (nivel) REFERENCES Niveles(id_nivel) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Preguntas_IdPregunta_PK PRIMARY KEY (id_pregunta)
 );
@@ -187,7 +202,7 @@ INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 -- Pregunta 5
 ('¿Qué letra es esta?', 'https://res.cloudinary.com/dpizfkmea/image/upload/v1721621452/j_ufxtkb.jpg', 2, 1), -- J
 -- Pregunta 6
-('¿Es la letra "H"?', 'https://res.cloudinary.com/dpizfkmea/image/upload/v1721621446/h_auo9dz.jpg', 2, 2);-- H
+('¿Es la letra "H"?', 'https://res.cloudinary.com/dpizfkmea/image/upload/v1721621446/h_auo9dz.jpg', 2, 2); -- H
 
 
 --NIVEL3
@@ -223,7 +238,7 @@ INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 ('¿Es la letra "R"?', 'https://res.cloudinary.com/dpizfkmea/image/upload/v1721621384/r_kl8tpv.jpg', 4, 2);-- R
 
 
---NIVEL4
+--NIVEL5
 INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 -- Pregunta 1
 ('¿Cuál es esta letra en lenguaje de señas?', 'https://res.cloudinary.com/dpizfkmea/image/upload/v1721621413/y_xjqe5l.jpg', 5, 1), -- Y
@@ -332,52 +347,46 @@ INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 
 --NIVEL 13
 INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
--- Pregunta 1
-('¿Esta seña significa "Verde"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625834/Rojo_lxuwyo.png', 13, 2), --Rojo
--- Pregunta 2
-('¿Esta seña significa "Amarillo"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625833/Azul_crdcqs.png', 13, 2), --Azul
--- Pregunta 3
-('¿Esta seña significa "Rojo"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625842/Amarillo_qtetw4.png', 13, 2), --Amarillo
--- Pregunta 4
-('¿Esta seña significa "Rojo"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625840/Verde_iv3pfm.png', 13, 2), --Verde
--- Pregunta 5
-('¿Esta seña significa "Azul"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625842/Amarillo_qtetw4.png', 13, 2), --Amarillo
--- Pregunta 6
-('¿Esta seña significa "Amarillo"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625833/Azul_crdcqs.png', 13, 2), --Azul
+('¿Esta seña significa "Verde" ?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625834/Rojo_lxuwyo.png', 13, 2),
+('¿Esta seña significa "Amarillo"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625833/Azul_crdcqs.png', 13, 2),
+('¿Esta seña significa "Rojo"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625842/Amarillo_qtetw4.png', 13, 2),
+('¿Esta seña significa "Rojo"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625840/Verde_iv3pfm.png', 13, 2),
+('¿Esta seña significa "Azul"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625842/Amarillo_qtetw4.png', 13, 2),
+('¿Esta seña significa "Amarillo"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625833/Azul_crdcqs.png', 13, 2);
 
 --NIVEL 14
 INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 -- Pregunta 1
-('¿Esta seña significa "Blanco"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625840/Verde_iv3pfm.png', 14, 2), --Verde
+('¿Esta seña significa "Blanco"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625840/Verde_iv3pfm.png', 14, 2),
 -- Pregunta 2
-('¿Esta seña significa "Gris"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625950/Blanco_p1lxar.png', 14, 2), --Blanco
+('¿Esta seña significa "Gris"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625950/Blanco_p1lxar.png', 14, 2), 
 -- Pregunta 3
-('Esta seña corresponde a:  ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625957/Crema_cg8yga.png', 14, 1), --Crema
+('Esta seña corresponde a:  ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625957/Crema_cg8yga.png', 14, 1), 
 -- Pregunta 4
-('Esta seña corresponde a ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625950/Blanco_p1lxar.png', 14, 1), --Blanco
+('Esta seña corresponde a ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625950/Blanco_p1lxar.png', 14, 1), 
 -- Pregunta 5
-('Esta seña scorresponde a ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625955/Celeste_gvbwft.png', 14, 1), --Celeste
+('Esta seña scorresponde a ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625955/Celeste_gvbwft.png', 14, 1), 
 -- Pregunta 6
-('¿Esta seña significa "Gris"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625947/Gris_dwy0mc.png', 14, 2), --Gris
+('¿Esta seña significa "Gris"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625947/Gris_dwy0mc.png', 14, 2); 
 
 --NIVEL 15
 INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 -- Pregunta 1
-('¿Esta seña significa "Morado"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625834/Rojo_lxuwyo.png', 15, 2), --Rojo
+('¿Esta seña significa "Morado"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625834/Rojo_lxuwyo.png', 15, 2), 
 -- Pregunta 2
-('¿Esta seña significa "Dorado"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625842/Amarillo_qtetw4.png', 15, 2), --Amarillo
+('¿Esta seña significa "Dorado"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625842/Amarillo_qtetw4.png', 15, 2), 
 -- Pregunta 3
-('¿Esta seña significa "Cobre"?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625955/Celeste_gvbwft.png', 15, 2), --Celeste
+('¿Esta seña significa "Cobre"?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625955/Celeste_gvbwft.png', 15, 2), 
 -- Pregunta 4
-('Esta seña corresponde a: "Dorado"', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721626091/Dorado_rftngy.png', 15, 2), --Dorado
+('Esta seña corresponde a: "Dorado"', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721626091/Dorado_rftngy.png', 15, 2), 
 -- Pregunta 5
-('Esta seña corresponde a: "Morado" ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721626077/Morado_enyr5p.png', 15, 2), --Morado
+('Esta seña corresponde a: "Morado" ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721626077/Morado_enyr5p.png', 15, 2), 
 -- Pregunta 6
-('¿Esta seña significa "Plata"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721626083/Plata_vljhv2.png', 15, 2), --Plata
+('¿Esta seña significa "Plata"? ', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721626083/Plata_vljhv2.png', 15, 2); 
 
 
 
-
+SELECT * FROM Preguntas;
 
 
 
@@ -388,7 +397,7 @@ CREATE TABLE IF NOT EXISTS Respuestas (
     respuesta VARCHAR(50) NOT NULL,
     correcta BOOLEAN NOT NULL,
     pregunta INT NOT NULL,
-    CONSTRAINT Respuestas_Pregunta_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta) ON DECLARE ON UPDATE CASCADE,
+    CONSTRAINT Respuestas_Pregunta_FK FOREIGN KEY (pregunta) REFERENCES Preguntas(id_pregunta) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Opciones_IdRespuesta_PK PRIMARY KEY (id_respuesta)
 );
 SHOW TABLES;
@@ -550,7 +559,7 @@ INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 ('Cierto', TRUE, 30),
-('Falso', FALSE, 30)
+('Falso', FALSE, 30);
 
 
 
@@ -594,147 +603,147 @@ INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 ('1', FALSE, 31),
 ('2', TRUE, 31),
 ('3', FALSE, 31),
-('4', FALSE, 31),
+('4', FALSE, 31);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 2 (nivel 6)
 ('1', FALSE, 32),
 ('3', FALSE, 32),
 ('5', TRUE, 32),
-('6', FALSE, 32),
+('6', FALSE, 32);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 3 (nivel 6)
 ('2', FALSE, 33),
 ('3', TRUE, 33),
 ('4', FALSE, 33),
-('5', FALSE, 33),
+('5', FALSE, 33);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 4 (nivel 6)
 ('5', FALSE, 34),
 ('6', TRUE, 34),
 ('7', FALSE,34),
-('8', FALSE, 34),
+('8', FALSE, 34);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 5 (nivel 6)
 ('7', FALSE, 35),
 ('8', TRUE, 35),
 ('9', FALSE, 35),
-('10', FALSE, 35),
+('10', FALSE, 35);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 6 (nivel 6)
 ('1', TRUE, 36),
 ('2', FALSE, 36),
 ('3', FALSE, 36),
-('4', FALSE, 36),
+('4', FALSE, 36);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 1 (nivel 7)
 ('9', FALSE, 37),
 ('10', TRUE, 37),
 ('11', FALSE, 37),
-('12', FALSE, 37),
+('12', FALSE, 37);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 2 (nivel 7)
 ('11', FALSE, 38),
 ('12', TRUE, 38),
 ('13', FALSE, 38),
-('14', FALSE, 38),
+('14', FALSE, 38);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 3 (nivel 7)
 ('10', FALSE, 39),
 ('11', TRUE, 39),
 ('12', FALSE, 39),
-('13', FALSE, 39),
+('13', FALSE, 39);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 4 (nivel 7)
 ('12', FALSE, 40),
 ('13', TRUE, 40),
 ('14', FALSE, 40),
-('15', FALSE, 40),
+('15', FALSE, 40);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 5 (nivel 7)
 ('Cierto', FALSE, 41),
-('Falso', TRUE, 41),
+('Falso', TRUE, 41);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 6 (nivel 7)
 ('Cierto', TRUE, 42),
-('Falso', FALSE, 42),
+('Falso', FALSE, 42);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 1 (nivel 8)
 ('20', FALSE, 43),
 ('30', TRUE, 43),
 ('40', FALSE, 43),
-('50', FALSE, 43),
+('50', FALSE, 43);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 2 (nivel 8)
 ('10', FALSE, 44),
 ('20', TRUE, 44),
 ('30', FALSE, 44),
-('40', FALSE, 44),
+('40', FALSE, 44);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 3 (nivel 8)
 ('Cierto', FALSE, 45),
-('Falso', TRUE, 45),
+('Falso', TRUE, 45);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 4 (nivel 8)
 ('20', FALSE, 46),
 ('30', FALSE, 46),
 ('40', TRUE, 46),
-('50', FALSE, 46),
+('50', FALSE, 46);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 5 (nivel 8)
 ('Cierto', FALSE, 47),
-('Falso', TRUE, 47),
+('Falso', TRUE, 47);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 6 (nivel 8)
 ('Cierto', TRUE, 48),
-('Falso', FALSE, 48),
+('Falso', FALSE, 48);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 1 (nivel 9)
 ('100', TRUE, 49),
 ('200', FALSE, 49),
 ('300', FALSE, 49),
-('400', FALSE, 49),
+('400', FALSE, 49);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 2 (nivel 9)
 ('100', FALSE, 50),
 ('200', TRUE, 50),
 ('300', FALSE, 50),
-('400', FALSE, 50),
+('400', FALSE, 50);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 3 (nivel 9)
 ('Cierto', FALSE, 51),
-('Falso', TRUE, 51),
+('Falso', TRUE, 51);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 4 (nivel 9)
 ('100', TRUE, 52),
 ('200', FALSE, 52),
 ('300', FALSE, 52),
-('400', FALSE, 52),
+('400', FALSE, 52);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 5 (nivel 9)
 ('Cierto', TRUE, 53),
-('Falso', FALSE, 53),
+('Falso', FALSE, 53);
 
 INSERT INTO Respuestas (respuesta, correcta, pregunta) VALUES
 -- Respuestas para Pregunta 6 (nivel 9)
@@ -959,7 +968,7 @@ SHOW TABLES;
 -- );
 
 SHOW TABLES;
-DROP TABLE IF NOT EXISTS Usuarios;
+DROP TABLE IF EXISTS Usuarios;
 CREATE TABLE IF NOT EXISTS Usuarios (
   id_usuario INT NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(50) NOT NULL,
@@ -970,7 +979,6 @@ CREATE TABLE IF NOT EXISTS Usuarios (
   tipo INT NOT NULL,
   exp INT NOT NULL DEFAULT 0,
   CONSTRAINT `PK_Usuarios_id` PRIMARY KEY (id_usuario)
-  --CONSTRAINT Usuarios_TipoUsuarioId_FK FOREIGN KEY (tipo) REFERENCES Tipo_Usuario(id_tipo) ON DELETE CASCADE ON UPDATE CASCADE
 );
 SHOW TABLES;
 
@@ -1066,18 +1074,18 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 
 
-INSERT INTO Usuarios (nombre, apellido, email, contra, foto_perfil, tipo, exp) VALUES
-('Carlos', 'González', 'carlos.gonzalez@example.com', 'password123', 'carlos.jpg', 1, 10),
-('Ana', 'Martínez', 'ana.martinez@example.com', 'password123', 'ana.jpg', 2, 20),
-('Luis', 'Pérez', 'luis.perez@example.com', 'password123', 'luis.jpg', 1, 15),
-('María', 'López', 'maria.lopez@example.com', 'password123', 'maria.jpg', 2, 25),
-('Jorge', 'Sánchez', 'jorge.sanchez@example.com', 'password123', 'jorge.jpg', 1, 30),
-('Lucía', 'Ramírez', 'lucia.ramirez@example.com', 'password123', 'lucia.jpg', 2, 35),
-('Pedro', 'Torres', 'pedro.torres@example.com', 'password123', 'pedro.jpg', 1, 5),
-('Carmen', 'Flores', 'carmen.flores@example.com', 'password123', 'carmen.jpg', 2, 40),
-('Juan', 'Hernández', 'juan.hernandez@example.com', 'password123', 'juan.jpg', 1, 50),
-('Sofía', 'Díaz', 'sofia.diaz@example.com', 'password123', 'sofia.jpg', 2, 45),
-('Ricardo', 'Vargas', 'ricardo.vargas@example.com', 'password123', 'ricardo.jpg', 1, 60),
-('Elena', 'Mendoza', 'elena.mendoza@example.com', 'password123', 'elena.jpg', 2, 55),
-('Manuel', 'Cruz', 'manuel.cruz@example.com', 'password123', 'manuel.jpg', 1, 70),
-('Paula', 'Gutiérrez', 'paula.gutierrez@example.com', 'password123', 'paula.jpg', 2, 65);
+INSERT INTO Usuarios (nombre, apellido, email, contra, tipo, exp) VALUES
+('Carlos', 'González', 'carlos.gonzalez@example.com', 'password123',  1, 10),
+('Ana', 'Martínez', 'ana.martinez@example.com', 'password123',  2, 20),
+('Luis', 'Pérez', 'luis.perez@example.com', 'password123',  1, 15),
+('María', 'López', 'maria.lopez@example.com', 'password123',  2, 25),
+('Jorge', 'Sánchez', 'jorge.sanchez@example.com', 'password123',  1, 30),
+('Lucía', 'Ramírez', 'lucia.ramirez@example.com', 'password123',  2, 35),
+('Pedro', 'Torres', 'pedro.torres@example.com', 'password123', 1, 5),
+('Carmen', 'Flores', 'carmen.flores@example.com', 'password123', 2, 40),
+('Juan', 'Hernández', 'juan.hernandez@example.com', 'password123', 1, 50),
+('Sofía', 'Díaz', 'sofia.diaz@example.com', 'password123', 2, 45),
+('Ricardo', 'Vargas', 'ricardo.vargas@example.com', 'password123',  1, 60),
+('Elena', 'Mendoza', 'elena.mendoza@example.com', 'password123',  2, 55),
+('Manuel', 'Cruz', 'manuel.cruz@example.com', 'password123',  1, 70),
+('Paula', 'Gutiérrez', 'paula.gutierrez@example.com', 'password123', 2, 65);

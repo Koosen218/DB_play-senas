@@ -122,7 +122,6 @@ WHERE
 GROUP BY
     p.id_pregunta, p.pregunta, p.tipo, p.imagen_url;
 
-
 SELECT
     p.id_pregunta,
     p.pregunta AS Pregunta,
@@ -130,17 +129,11 @@ SELECT
     p.imagen_url AS ImagenPregunta,
     r.id_respuesta AS IdRespuesta,
     r.respuesta AS Respuesta,
-    r.imagenURL AS ImagenRespuesta,
-    r.correcta AS Correcta,
-    o.respuesta AS RespuestaOrdenada,
-    o.imagenURL AS ImagenOrdenada,
-    o.orden AS Orden
+    r.correcta AS Correcta
 FROM
     Preguntas p
     LEFT JOIN Respuestas r ON p.id_pregunta = r.pregunta
-    LEFT JOIN Orden_Respuestas o ON p.id_pregunta = o.pregunta
 WHERE
-    p.nivel = 1;
 
 INSERT INTO Usuarios (nombre, apellido, email, contra, foto_perfil, tipo)
 VALUES ('Ana', 'Lopez', 'A.Lopez@email.com', '789', 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 1);
