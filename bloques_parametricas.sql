@@ -123,7 +123,6 @@ GROUP BY
     p.id_pregunta, p.pregunta, p.tipo, p.imagen_url;
 
 
-
 SELECT
     p.id_pregunta,
     p.pregunta AS Pregunta,
@@ -134,12 +133,12 @@ SELECT
     r.imagenURL AS ImagenRespuesta,
     r.correcta AS Correcta,
     o.respuesta AS RespuestaOrdenada,
+    o.imagenURL AS ImagenOrdenada,
     o.orden AS Orden
 FROM
     Preguntas p
-    JOIN Tipo_Preguntas tp ON p.tipo = tp.id_tipo
-    LEFT JOIN Respuestas r ON p.id_pregunta = r.pregunta AND tp.tipo IN ('Escoge la respuesta correcta', 'Cierto y Falso')
-    LEFT JOIN Orden_Respuestas o ON p.id_pregunta = o.pregunta AND tp.tipo = 'Ordena la respuesta'
+    LEFT JOIN Respuestas r ON p.id_pregunta = r.pregunta
+    LEFT JOIN Orden_Respuestas o ON p.id_pregunta = o.pregunta
 WHERE
     p.nivel = 1;
 

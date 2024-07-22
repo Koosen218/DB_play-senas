@@ -3,10 +3,9 @@
 DELIMETER //
 
 -- Create
-CREATE PROCEDURE CreateEtapa(IN p_nombre VARCHAR(50), IN p_descripcion VARCHAR(500))
+CREATE PROCEDURE CreateEtapa(IN p_nombre VARCHAR(50), IN p_descripcion VARCHAR(500), p_imagen_url VARCHAR(1000))
 BEGIN
-    INSERT INTO Etapas (nombre, descripcion) VALUES (p_nombre, p_descripcion);
-    SELECT LAST_INSERT_ID() AS id_etapa;
+    INSERT INTO Etapas (nombre, descripcion, imagen_url) VALUES (p_nombre, p_descripcion, p_imagen_url);
 END //
 
 -- Read
@@ -16,9 +15,9 @@ BEGIN
 END //
 
 -- Update
-CREATE PROCEDURE UpdateEtapa(IN p_id_etapa INT, IN p_nombre VARCHAR(50), IN p_descripcion VARCHAR(500))
+CREATE PROCEDURE UpdateEtapa(IN p_id_etapa INT, IN p_nombre VARCHAR(50), IN p_descripcion VARCHAR(500), p_imagen_url VARCHAR(1000))
 BEGIN
-    UPDATE Etapas SET nombre = p_nombre, descripcion = p_descripcion WHERE id_etapa = p_id_etapa;
+    UPDATE Etapas SET nombre = p_nombre, descripcion = p_descripcion, imagen_url = p_imagen_url WHERE id_etapa = p_id_etapa;
 END //
 
 -- Delete
@@ -42,7 +41,6 @@ DELIMETER //
 CREATE PROCEDURE CreateNivel(IN p_nombre VARCHAR(50), IN p_descripcion VARCHAR(500), IN p_etapa INT, IN p_exp INT)
 BEGIN
     INSERT INTO Niveles (nombre, descripcion, etapa, exp) VALUES (p_nombre, p_descripcion, p_etapa, p_exp);
-    SELECT LAST_INSERT_ID() AS id_nivel;
 END //
 
 -- Read
@@ -79,7 +77,6 @@ DELIMETER //
 CREATE PROCEDURE CreateLeccion(IN p_nombre VARCHAR(50), IN p_descripcion VARCHAR(500), IN p_imagen_url VARCHAR(500), IN p_video_url VARCHAR(500), IN p_nivel INT)
 BEGIN
     INSERT INTO Lecciones (nombre, descripcion, imagen_url, video_url, nivel) VALUES (p_nombre, p_descripcion, p_imagen_url, p_video_url, p_nivel);
-    SELECT LAST_INSERT_ID() AS id_leccion;
 END //
 
 -- Read
@@ -102,36 +99,6 @@ END //
 
 DELIMITER ;
 
--- Tabla Tipo_Preguntas:
-
-DELIMETER //
-
--- Create
-CREATE PROCEDURE CreateTipoPregunta(IN p_tipo VARCHAR(50))
-BEGIN
-    INSERT INTO Tipo_Preguntas (tipo) VALUES (p_tipo);
-    SELECT LAST_INSERT_ID() AS id_tipo;
-END //
-
--- Read
-CREATE PROCEDURE ReadTipoPregunta(IN p_id_tipo INT)
-BEGIN
-    SELECT * FROM Tipo_Preguntas WHERE id_tipo = p_id_tipo;
-END //
-
--- Update
-CREATE PROCEDURE UpdateTipoPregunta(IN p_id_tipo INT, IN p_tipo VARCHAR(50))
-BEGIN
-    UPDATE Tipo_Preguntas SET tipo = p_tipo WHERE id_tipo = p_id_tipo;
-END //
-
--- Delete
-CREATE PROCEDURE DeleteTipoPregunta(IN p_id_tipo INT)
-BEGIN
-    DELETE FROM Tipo_Preguntas WHERE id_tipo = p_id_tipo;
-END //
-
-DELIMITER ;
 
 -- Tabla Preguntas:
 
@@ -141,7 +108,6 @@ DELIMETER //
 CREATE PROCEDURE CreatePregunta(IN p_pregunta VARCHAR(100), IN p_imagen_url VARCHAR(500), IN p_nivel INT, IN p_tipo INT)
 BEGIN
     INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES (p_pregunta, p_imagen_url, p_nivel, p_tipo);
-    SELECT LAST_INSERT_ID() AS id_pregunta;
 END //
 
 -- Read

@@ -17,21 +17,21 @@ END $$
 
 DELIMITER ;
 
-DELIMITER //
+-- DELIMITER //
 
-CREATE PROCEDURE crear_usuario(
-  IN p_nombre VARCHAR(50),
-  IN p_apellido VARCHAR(50),
-  IN p_email VARCHAR(50),
-  IN p_contra VARCHAR(50),
-  IN p_foto_perfil VARCHAR(400),
-  IN p_tipo INT
-)
-BEGIN
-  INSERT INTO Usuarios (nombre, apellido, email, contra, foto_perfil, tipo)
-  VALUES (p_nombre, p_apellido, p_email, p_contra, p_foto_perfil, p_tipo);
-END;
-DELIMITER;
+-- CREATE PROCEDURE crear_usuario(
+--   IN p_nombre VARCHAR(50),
+--   IN p_apellido VARCHAR(50),
+--   IN p_email VARCHAR(50),
+--   IN p_contra VARCHAR(50),
+--   IN p_foto_perfil VARCHAR(400),
+--   IN p_tipo INT
+-- )
+-- BEGIN
+--   INSERT INTO Usuarios (nombre, apellido, email, contra, foto_perfil, tipo)
+--   VALUES (p_nombre, p_apellido, p_email, p_contra, p_foto_perfil, p_tipo);
+-- END;
+-- DELIMITER;
 
 -- Crear procedimiento IniciarSesion
 DELIMITER //
