@@ -350,3 +350,52 @@ BEGIN
 END //
 
 DELIMITER ;
+
+
+DELIMITER //
+
+CREATE OR REPLACE PROCEDURE CrearAyuda(
+    IN p_pregunta VARCHAR(255), 
+    IN p_respuesta TEXT)
+BEGIN
+    INSERT INTO Ayuda (pregunta, respuesta) 
+    VALUES (p_pregunta, p_respuesta);
+END //
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE OR REPLACE PROCEDURE ObtenerAyuda(
+    IN p_id INT)
+BEGIN
+    SELECT * FROM Ayuda WHERE id = p_id;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE OR REPLACE PROCEDURE ActualizarAyuda(
+    IN p_id INT, 
+    IN p_pregunta VARCHAR(255), 
+    IN p_respuesta TEXT)
+BEGIN
+    UPDATE Ayuda 
+    SET pregunta = p_pregunta, 
+        respuesta = p_respuesta 
+    WHERE id = p_id;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE OR REPLACE PROCEDURE EliminarAyuda(
+    IN p_id INT)
+BEGIN
+    DELETE FROM Ayuda WHERE id = p_id;
+END //
+
+DELIMITER ;

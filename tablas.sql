@@ -275,7 +275,7 @@ INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 ('¿Se representa el número "13" así?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721624910/12_rdn6ds.png', 7, 2), --   12
 ('¿Se representa el número "13" así?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721624912/13_n5issh.png', 7, 2); --   13
 
---nivel8 [20, 30, 40]
+--nivel 8 [20, 30, 40]
 INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 
 ('¿Cuál es este número en lenguaje de señas?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625072/30_zc24yk.png', 8, 1), --   30
@@ -285,7 +285,7 @@ INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 ('¿Se representa el número "30" así?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625071/20_hie0s3.png', 8, 2), --   20
 ('¿Se representa el número "40" así?', 'https://res.cloudinary.com/dohyqqpyb/image/upload/v1721625071/40_twgmyk.png', 8, 2); --   40
 
---nivel9 [100, 200, 300]
+--nivel 9 [100, 200, 300]
 
 INSERT INTO Preguntas (pregunta, imagen_url, nivel, tipo) VALUES
 
@@ -945,7 +945,25 @@ INSERT INTO Usuarios (nombre, apellido, email, contra, tipo, exp) VALUES
 SELECT * FROM Usuarios;
 
 
+CREATE TABLE Ayuda (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pregunta VARCHAR(255) NOT NULL,
+    respuesta TEXT NOT NULL
+);
 
+INSERT INTO Ayuda (pregunta, respuesta) VALUES
+('¿Qué es el lenguaje de señas?', 'El lenguaje de señas es un sistema de comunicación que utiliza gestos, movimientos de las manos y expresiones faciales para transmitir significados. Es utilizado principalmente por personas sordas y con dificultades auditivas.'),
+('¿Cómo se señalan las letras del abecedario en lenguaje de señas panameño?', 'Cada letra del abecedario tiene una seña específica en lenguaje de señas panameño. Se pueden aprender viendo vídeos o imágenes que muestren cada seña correspondiente.'),
+('¿Cómo puedo aprender los números en lenguaje de señas panameño?', 'Los números en lenguaje de señas panameño también tienen señas específicas. Puedes practicar observando recursos visuales como vídeos o imágenes que muestren cómo realizar cada seña.'),
+('¿Qué son las palabras de relación en lenguaje de señas?', 'Las palabras de relación son las frases o palabras de uso común para comunicarse con otras personas.'),
+('¿Cómo se señalan los colores en lenguaje de señas panameño?', 'Cada color tiene una seña específica en lenguaje de señas panameño. Es útil aprender estos signos viendo vídeos o imágenes que muestren las señas correspondientes.'),
+('¿Hay algún recurso en línea donde pueda aprender lenguaje de señas panameño?', 'Sí, hay varios recursos en línea como vídeos educativos, aplicaciones móviles y sitios web que ofrecen tutoriales y guías para aprender lenguaje de señas panameño.'),
+('¿Cómo puedo practicar las señas del abecedario?', 'Puedes practicar las señas del abecedario repitiendo cada seña frente a un espejo, usando aplicaciones educativas, o practicando con un compañero que también esté aprendiendo.'),
+('¿Por qué es importante aprender lenguaje de señas?', 'Aprender lenguaje de señas es importante para comunicarse eficazmente con personas sordas o con dificultades auditivas. También promueve la inclusión y la accesibilidad en la sociedad.'),
+('¿Cuánto tiempo me llevará aprender lenguaje de señas básico?', 'El tiempo necesario para aprender lenguaje de señas básico varía según la dedicación y el método de aprendizaje utilizado. Con práctica regular, es posible aprender las señas básicas en unos pocos meses.'),
+('¿Puedo usar lenguaje de señas panameño para comunicarme con personas que usan otros lenguajes de señas?', 'Aunque hay similitudes entre algunos lenguajes de señas, cada país tiene su propio sistema de señas. Sin embargo, aprender un lenguaje de señas puede facilitar el aprendizaje de otros lenguajes de señas.');
+
+Select * FROM Ayuda;
 
 
 -- borrar todo para levantar nuevamente

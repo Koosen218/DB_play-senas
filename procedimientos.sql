@@ -46,6 +46,8 @@ CALL iniciar_sesion('A.Lopez@email.com', '789');
 
 -- Crear procedimiento incrementar_Exp
 DELIMITER //
+
+
 CREATE OR REPLACE PROCEDURE incrementar_Exp(
   IN p_id_usuario INT
 )
@@ -53,7 +55,10 @@ BEGIN
   UPDATE Usuarios
   SET exp = exp + 10
   WHERE id_usuario = p_id_usuario;
+
 END//
+
+
 DELIMITER ;
 
 -- Crear procedimiento eliminar_usuario
@@ -64,11 +69,15 @@ CREATE OR REPLACE PROCEDURE eliminar_usuario(
 BEGIN
   DELETE FROM Usuarios WHERE id_usuario = p_id_usuario;
 END//
+
+
 DELIMITER ;
 
 
 
 DELIMITER //
+
+
 CREATE OR REPLACE PROCEDURE actualizar_usuario(
   IN p_id INT,
   IN p_nombre VARCHAR(50),
@@ -80,6 +89,8 @@ UPDATE Usuarios
 SET nombre = p_nombre, apellido = p_apellido, foto_perfil = p_foto_perfil
 WHERE id_usuario = p_id;
 END //
+
+
 DELIMITER;
 
 
