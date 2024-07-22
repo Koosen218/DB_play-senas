@@ -19,7 +19,6 @@ CREATE TABLE IF NOT EXISTS Etapas (
     nombre VARCHAR(50) NOT NULL,
     imagen_url VARCHAR(500) NULL,
     descripcion VARCHAR(500) NOT NULL,
-    imagen_url VARCHAR(1000),
     CONSTRAINT Etapas_IdEtapa_PK PRIMARY KEY (id_etapa)
 );
 
@@ -943,7 +942,7 @@ INSERT INTO Usuarios (nombre, apellido, email, contra, tipo, exp) VALUES
 ('Manuel', 'Cruz', 'manuel.cruz@example.com', 'password123',  1, 70),
 ('Paula', 'Gutiérrez', 'paula.gutierrez@example.com', 'password123', 2, 65);
 
-
+SELECT * FROM Usuarios;
 
 
 
@@ -955,14 +954,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 -- Eliminar las tablas
 DROP TABLE IF EXISTS Usuarios;
-DROP TABLE IF EXISTS Tipo_Usuario;
-DROP TABLE IF EXISTS Progreso;
-DROP TABLE IF EXISTS Orden_Respuestas;
-DROP TABLE IF EXISTS Preguntas_Respuestas;
 DROP TABLE IF EXISTS Respuestas;
 DROP TABLE IF EXISTS Preguntas;
-DROP TABLE IF EXISTS Tipo_Preguntas;
-DROP TABLE IF EXISTS Niveles_Lecciones;
 DROP TABLE IF EXISTS Lecciones;
 DROP TABLE IF EXISTS Niveles;
 DROP TABLE IF EXISTS Etapas;
